@@ -29,7 +29,7 @@ def roll_dice(num_rolls, dice=six_sided):
         sum = sum + diceNum
         if diceNum == 1:
             containOne=True
-        num = num+1
+        num = num+1 
     if containOne :
         return 1
     else :
@@ -46,7 +46,23 @@ def piggy_points(score):
     """
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
+    return mincount(squre(score)) + 3
     # END PROBLEM 2
+
+def squre(score):
+   return score * score 
+
+def mincount(num):
+    """寻找每一个位数中最小的值"""
+    if num == 0:
+        return 0
+    minNum=9
+    while num >0:
+        n=num%10
+        if minNum > n :
+            minNum=n
+        num = num//10
+    return minNum
 
 
 def take_turn(num_rolls, opponent_score, dice=six_sided, goal=GOAL_SCORE):
